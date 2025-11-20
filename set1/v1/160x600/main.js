@@ -22,7 +22,7 @@ function init() {
 function animate() {
   let split1 = SplitText.create("#text-1b", { type: "words, chars" });
   let split2 = SplitText.create("#text-2", { type: "words, chars" });
-  let split3 = SplitText.create("#text-3", { type: "words, chars" });
+  // let split3 = SplitText.create("#text-3", { type: "words, chars" });
   let split4 = SplitText.create("#text-4", { type: "words, chars" });
 
   // tl1.set(["#main_content"], { autoAlpha: 1, force3D: true });
