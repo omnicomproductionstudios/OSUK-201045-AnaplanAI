@@ -34,7 +34,7 @@ function animate() {
   tl1.to(['#icon-2'], 0.5,{ x: '-=150' }, 0);
   tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0');
 
-  tl1.to(['#bg-1-icon'], 0.5,{ scale: 33, rotation: 0.1, ease: "power1.in" }, 1);
+  tl1.to(['#bg-1-icon'], 0.5,{ scale: 33, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
 
   tl1.from(split1.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
@@ -42,13 +42,13 @@ function animate() {
   tl1.from(split2.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
 
   tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=2');
-  tl1.to(['#frame-1'], 0.5,{ scale: 150, rotation: 0.1, ease: "power1.in" }, '+=0');
+  tl1.to(['#frame-1'], 0.5,{ scale: 150, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
 
   tl1.from(split3.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
 
   tl1.to(['#logo-2'], 0,{ autoAlpha: 0 }, '+=2');
-  tl1.to(['#frame-2'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in" }, '+=0');
+  tl1.to(['#frame-2'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-2'], 0,{autoAlpha: 0 }, '+=0');
   
   tl1.from(split4.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
