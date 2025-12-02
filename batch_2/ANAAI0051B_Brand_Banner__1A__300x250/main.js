@@ -39,7 +39,7 @@ function animate() {
 
   tl1.from(split1.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
 
-  tl1.from(split2.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
+  tl1.from(split2.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
   tl1.to(['#text-1b'], 0,{ webkitTextFillColor: '#ff6100' }, '<');
 
   tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=0.5');

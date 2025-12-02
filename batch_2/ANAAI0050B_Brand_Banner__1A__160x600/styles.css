@@ -229,7 +229,9 @@ html, body {
   background: #0a2f46;
   border: none;
 }
-
+#cta, #cta-3{
+  left: 17px;
+}
 #cta-text {
   position: relative;
   /* top: 1px; */
