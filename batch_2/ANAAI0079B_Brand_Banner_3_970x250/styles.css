@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-sup, sub {
+/* sup, sub {
   vertical-align: baseline;
   position: relative;
   top: -0.4em;
@@ -15,7 +15,7 @@ sup, sub {
 }
 sub { 
   top: 0.4em; 
-}
+} */
 
 html, body {
   width:970px;
@@ -93,7 +93,7 @@ html, body {
 .copy1 {
   width: 600px;
   top: 27px;
-  left: 49px;
+  left: 48px;
   font-size: 54.5px;
   line-height: 62px;
 }
@@ -124,6 +124,7 @@ html, body {
 
 #text-1b {
   color: #ff6100;
+  width: 270px;
   /* background: #ff6100;
   background: linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
   background: -webkit-linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
@@ -148,7 +149,24 @@ html, body {
   overflow: hidden;
 
 }
-
+#text-4{
+  width: 600px;
+  top: 48px;
+  left: 45px;
+  font-size: 62px;
+  line-height: 72px;
+  letter-spacing: 1.7px;
+}
+#text-4 sup{
+  position: relative;
+  font-size: 100%;
+  line-height: 0px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  top: -2px;
+  left: 2px;
+}
 #frame-1,
 #frame-2,
 #frame-3,
@@ -201,13 +219,13 @@ html, body {
   top: 135px;
   left: 744px;
   background: none;
-  border: 2px #EE8C29 solid;
+  border: 3px #ff6100 solid;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 22.6px;
   line-height: 18px;
   letter-spacing: 0.02rem;
-  width: 182px;
-  height: 48px;
+  width: 177px;
+  height: 43px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,6 +234,10 @@ html, body {
 #cta-2 {
   background: #0a2f46;
   border: none;
+  width: 180px;
+  height: 46px;
+  top: 136px;
+  left: 745px;
 }
 
 #cta-text {

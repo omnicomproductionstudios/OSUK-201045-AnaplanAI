@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-sup, sub {
+/* sup, sub {
   vertical-align: baseline;
   position: relative;
   top: -0.4em;
@@ -15,7 +15,7 @@ sup, sub {
 }
 sub { 
   top: 0.4em; 
-}
+} */
 
 html, body {
   width:160px;
@@ -91,18 +91,16 @@ html, body {
 }
 
 .copy1 {
-  top: 165px;
-  left: 18px;
+  top: 166px;
+  left: 17px;
   font-size: 25.5px;
   line-height: 30px;
 }
 
 .copy2 {
   width: 135px;
-
-  top: 175px;
+  top: 166px;
   left: 15px;
-
   font-size: 29px;
   line-height: 35px;
 }
@@ -152,7 +150,19 @@ html, body {
 #text-1c {
   color: #ffffff;
 }
-
+#text-4{
+  font-size: 29.5px;
+}
+#text-4 sup{
+      position: relative;
+    font-size: 100%;
+    line-height: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    top: -3px;
+    left: 2px;
+}
 #text-1b-container {
   width: 0px;
   height: 600px;
@@ -213,13 +223,13 @@ html, body {
   top: 541px;
   left: 19px;
   background: none;
-  border: 2px #EE8C29 solid;
+  border: 2px #ff6100 solid;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 15.1px;
   line-height: 18px;
   letter-spacing: 0.02rem;
-  width: 122px;
-  height: 34px;
+  width: 119px;
+  height: 29px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,9 +238,10 @@ html, body {
 #cta-2 {
   background: #0a2f46;
   border: none;
-}
-#cta, #cta-3{
-  left: 17px;
+  width: 120px;
+  height: 31px;
+  left: 21px;
+  top: 542px;
 }
 #cta-text {
   position: relative;

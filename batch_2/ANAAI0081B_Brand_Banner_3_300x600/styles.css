@@ -7,7 +7,7 @@
     font-display: swap;
 }
 
-sup, sub {
+/* sup, sub {
   vertical-align: baseline;
   position: relative;
   top: -0.4em;
@@ -15,7 +15,7 @@ sup, sub {
 }
 sub { 
   top: 0.4em; 
-}
+} */
 
 html, body {
   width:300px;
@@ -159,7 +159,23 @@ html, body {
   overflow: hidden;
 
 }
-
+#text-4{
+      left: 25px;
+    top: 114px;
+    font-size: 47px;
+    line-height: 53.5px;
+    letter-spacing: 1.9px;
+}
+#text-4 sup{
+  position: relative;
+  font-size: 100%;
+  line-height: 0px;
+  font-size: 23px;
+  font-weight: bold;
+  display: inline-block;
+  top: -2px;
+  left: 1px;
+}
 #frame-1,
 #frame-2,
 #frame-3,
@@ -205,29 +221,31 @@ html, body {
 #cta-2,
 #cta-3 {
   position: absolute;
-  text-align: center;
-  text-align: -moz-center;
-  text-align: -webkit-center;
-  transform-origin: center;
-  border-radius: 100px;
-  top: 509px;
-  left: 67px;
-  background: none;
-  border: 2px #EE8C29 solid;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 18px;
-  letter-spacing: 0.02rem;
-  width: 168px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    transform-origin: center;
+    border-radius: 100px;
+    top: 509px;
+    left: 67px;
+    background: none;
+    border: 2px #ff6100 solid;
+    color: #ffffff;
+    font-size: 20.5px;
+    line-height: 18px;
+    letter-spacing: 0.02rem;
+    width: 164px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cta-2 {
   background: #0a2f46;
   border: none;
+  width: 166px;
+  height: 45px;
 }
 
 #cta-text {

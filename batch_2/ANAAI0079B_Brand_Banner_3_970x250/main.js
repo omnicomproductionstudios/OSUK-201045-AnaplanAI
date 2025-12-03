@@ -6,6 +6,11 @@ var tl;
 var tl1;
 var tl2;
 
+// Ensure SplitText plugin is registered (GSAP 3)
+if (typeof gsap !== "undefined" && gsap.registerPlugin && typeof SplitText !== "undefined") {
+  gsap.registerPlugin(SplitText);
+}
+
 // Init tricggered by onLoad in Body tag
 function init() {
   // Set Banner duration timer
@@ -20,11 +25,19 @@ function init() {
 }
 
 function animate() {
-  let split1 = SplitText.create("#text-1b", { type: "words, chars" });
-  let split2 = SplitText.create("#text-2", { type: "words, chars" });
-  let split3 = SplitText.create("#text-3", { type: "words, chars" });
-  let split4 = SplitText.create("#text-4", { type: "words, chars" });
-
+  
+  // Split text for animations
+  let split1, split2, split3, split4;
+  try {
+    split1 = new SplitText("#text-1b", { type: "words, chars" });
+    split2 = new SplitText("#text-2", { type: "words, chars" });
+    split3 = new SplitText("#text-3", { type: "words, chars" });
+    split4 = new SplitText("#text-4", { type: "words, chars" });
+  } catch (err) {
+    console.warn("SplitText failed to initialize; showing text without split animations", err);
+  }
+// Ensure gradient styles apply on the whole phrase (no per-char gradient)
+  applyGradientText(split1);
   // tl1.set(["#main_content"], { autoAlpha: 1, force3D: true });
   tl1.set(["#cta"], { force3D: false, rotation: .001 });
 
@@ -37,21 +50,21 @@ function animate() {
   tl1.to(['#bg-1-icon'], 0.5,{ scale: 33, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
 
-  tl1.from(split1.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
+  tl1.from(split1 ? split1.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
 
-  tl1.from(split2.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.4');
+  tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.5');
 
   tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=1');
   tl1.to(['#frame-1'], 0.5,{ scale: 150, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
 
-  tl1.from(split3.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
+  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.1');
 
   tl1.to(['#logo-2'], 0,{ autoAlpha: 0 }, '+=1');
   tl1.to(['#frame-2'], 0.5,{ scale: 150, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-2'], 0,{autoAlpha: 0 }, '+=0');
   
-  tl1.from(split4.chars, 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
+  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
 
 }
 
@@ -82,7 +95,38 @@ function shuffle(array) {
 
   return array;
 }
+function applyGradientText(splitInstance) {
+  const gradientStyle = "linear-gradient(117deg, #ff9757 10%, #ff6100 100%)";
+  const parent = document.getElementById("text-1b");
+  if (!parent) return;
 
+  // Apply to parent
+  const parentRect = parent.getBoundingClientRect();
+  const parentWidth = parentRect.width || parent.offsetWidth || 0;
+  const parentHeight = parentRect.height || parent.offsetHeight || 0;
+  parent.style.backgroundImage = gradientStyle;
+  parent.style.webkitBackgroundClip = "text";
+  parent.style.backgroundClip = "text";
+  parent.style.webkitTextFillColor = "transparent";
+  parent.style.color = "transparent";
+  parent.classList.add("split-gradient");
+
+  // Align gradient across chars so it remains continuous
+  const chars = (splitInstance && splitInstance.chars) || [];
+  chars.forEach(char => {
+    const rect = char.getBoundingClientRect();
+    const offset = rect.left - parentRect.left;
+    const offsetY = rect.top - parentRect.top;
+    char.style.backgroundImage = gradientStyle;
+    char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
+    char.style.backgroundPosition = `-${offset}px -${offsetY}px`;
+    char.style.backgroundRepeat = "no-repeat";
+    char.style.webkitBackgroundClip = "text";
+    char.style.backgroundClip = "text";
+    char.style.webkitTextFillColor = "transparent";
+    char.style.color = "transparent";
+  });
+}
 function endTime() {
   // show total banner animation time in browser console.
   var endTime = new Date();
