@@ -54,7 +54,7 @@ function animate() {
   tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.5');
 
 
-  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=1');
+  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=0.5');
   tl1.to(['#frame-1'], 0.5,{ scale: 200, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
 

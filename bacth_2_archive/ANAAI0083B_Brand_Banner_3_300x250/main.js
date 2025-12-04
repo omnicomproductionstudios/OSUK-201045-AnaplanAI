@@ -5,10 +5,12 @@ var startTime;
 var tl;
 var tl1;
 var tl2;
+
 // Ensure SplitText plugin is registered (GSAP 3)
 if (typeof gsap !== "undefined" && gsap.registerPlugin && typeof SplitText !== "undefined") {
   gsap.registerPlugin(SplitText);
 }
+
 // Init tricggered by onLoad in Body tag
 function init() {
   // Set Banner duration timer
@@ -34,6 +36,7 @@ function animate() {
     console.warn("SplitText failed to initialize; showing text without split animations", err);
   }
 
+
   // Ensure gradient styles apply on the whole phrase (no per-char gradient)
   applyGradientText(split1);
 
@@ -41,19 +44,20 @@ function animate() {
   tl1.set(["#cta"], { force3D: false, rotation: .001 });
 
   tl1.to(['#main'], 0.5,{ autoAlpha: 1 }, 0);
-  tl1.to(['#icon-1', '#icon-2'], 0.5,{ y: '-=600' }, 0);
+  tl1.to(['#icon-1', '#icon-2'], 0.5,{ y: '-=250' }, 0);
   tl1.to(['#icon-1'], 0.5,{ x: '+=150' }, 0);
   tl1.to(['#icon-2'], 0.5,{ x: '-=150' }, 0);
   tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0');
 
-  tl1.to(['#bg-1-icon'], 0.5,{ scale: 18, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
+  tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
 
   tl1.from(split1 ? split1.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
 
   tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
+  tl1.to(['#text-1b'], 0,{ webkitTextFillColor: '#ff6100' }, '<');
 
-  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=0.5');
+  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=1');
   tl1.to(['#frame-1'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
   tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
 
