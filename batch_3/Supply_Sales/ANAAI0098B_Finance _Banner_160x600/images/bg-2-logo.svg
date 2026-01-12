@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 160 600">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        mask: url(#mask);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-8 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-9 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-10 {
+        fill: #0a2f46;
+      }
+
+      .cls-11 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-12 {
+        mask: url(#mask-2);
+      }
+
+      .cls-13 {
+        mask: url(#mask-3);
+      }
+
+      .cls-14 {
+        mask: url(#mask-1);
+      }
+
+      .cls-15 {
+        fill: #fff;
+      }
+
+      .cls-16 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-1" d="M0,0v600h160V0H0ZM18.45,516.85l8.8-20.84h6.11l-8.8,20.84h-6.11ZM36.1,500.72l3.3,7.77h-6.46l3.16-7.77ZM36.39,516.85l-2.02-4.78h6.56l2.02,4.78h-6.56Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="254.75" y1="408.65" x2="701.85" y2="161.59" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="-138.62" y="-48.81" width="1170.68" height="702.75" maskUnits="userSpaceOnUse">
+      <rect class="cls-11" x="-138.62" y="-48.81" width="1170.68" height="702.75"/>
+    </mask>
+    <linearGradient id="linear-gradient-2" x1="245.4" y1="256.01" x2="464.05" y2="343.47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a2f46"/>
+      <stop offset="1" stop-color="#133f59"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="250.07" y1="260.01" x2="-103.02" y2="556.26" xlink:href="#linear-gradient"/>
+    <mask id="mask-1" x="-385.99" y="-48.81" width="1170.68" height="702.75" maskUnits="userSpaceOnUse">
+      <rect class="cls-8" x="-385.99" y="-48.81" width="1170.68" height="702.75"/>
+    </mask>
+    <linearGradient id="linear-gradient-4" x1="32.6" y1="271.44" x2="178.79" y2="329.92" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="70.98" y1="803.47" x2="178.11" y2="29.52" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".18" stop-color="#d2d2d2"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask-2" x="-445.02" y="-48.81" width="1170.68" height="702.75" maskUnits="userSpaceOnUse">
+      <rect class="cls-5" x="-445.02" y="-48.81" width="1170.68" height="702.75"/>
+    </mask>
+    <linearGradient id="linear-gradient-6" x1="-56.19" y1="289.96" x2="3.07" y2="313.66" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-7" x1="-133.64" y1="272.38" x2="-65.87" y2="569.72" gradientTransform="translate(-253.52 605.14) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask-3" x="-712.1" y="-48.81" width="1170.68" height="702.75" maskUnits="userSpaceOnUse">
+      <rect class="cls-4" x="-712.1" y="-48.81" width="1170.68" height="702.75" transform="translate(-253.52 605.14) rotate(180)"/>
+    </mask>
+    <linearGradient id="linear-gradient-8" x1="-431.96" y1="238.64" x2="-131.78" y2="358.71" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g id="_160x600" data-name="160x600">
+    <g class="cls-16">
+      <g>
+        <rect class="cls-10" x="-1630.91" y="-.29" width="2273.42" height="605.74"/>
+        <g class="cls-2">
+          <polygon class="cls-9" points="385.39 605.45 642.51 -.29 338.27 -.29 81.15 605.45 385.39 605.45"/>
+        </g>
+        <g class="cls-14">
+          <polygon class="cls-7" points="81.13 605.45 338.26 -.29 139.76 -.29 -117.37 605.45 81.13 605.45"/>
+        </g>
+        <g class="cls-12">
+          <polygon class="cls-6" points="-117.37 605.45 139.76 -.29 68.1 -.29 -189.02 605.45 -117.37 605.45"/>
+        </g>
+        <g class="cls-13">
+          <polygon class="cls-3" points="-189.07 605.45 68.05 -.29 -355.16 -.29 -612.29 605.45 -189.07 605.45"/>
+        </g>
+      </g>
+      <path class="cls-15" d="M60.58,506.19v10.45h-4.58v-9.01c0-2.17-1.02-3.28-2.77-3.28s-2.86,1.11-2.86,3.28v9.01h-4.58v-16.14h3.6l.97,2.29c1.05-1.36,2.41-2.59,4.73-2.59,3.46,0,5.48,2.29,5.48,5.99ZM76.44,502.12c1.2,1.2,1.75,2.98,1.75,5.15v9.37h-3.69l-.74-1.75c-1.11,1.23-2.65,2.05-4.88,2.05-3.04,0-5.54-1.75-5.54-4.94v-.06c0-3.52,2.68-5.15,6.51-5.15,1.63,0,2.8.27,3.95.66v-.27c0-1.9-1.17-2.95-3.46-2.95-1.63,0-2.82.29-4.17.77l-1.43-3.39c1.78-.78,3.52-1.29,6.26-1.29,2.5,0,4.31.66,5.45,1.81ZM73.85,510.13c-.78-.36-1.81-.6-2.92-.6-1.96,0-3.16.78-3.16,2.23v.06c0,1.23,1.02,1.96,2.5,1.96,2.14,0,3.58-1.17,3.58-2.83v-.81ZM98.65,508.54v.06c0,5.39-3.52,8.34-7.35,8.34-2.44,0-3.95-1.11-5.03-2.41v7.15h-4.58v-21.19h3.59l.99,2.32c1.11-1.51,2.65-2.62,5.03-2.62,3.77,0,7.35,2.95,7.35,8.34ZM94.07,508.54c0-2.68-1.81-4.46-3.95-4.46s-3.92,1.78-3.92,4.46v.06c0,2.68,1.78,4.46,3.92,4.46s3.95-1.75,3.95-4.46v-.06ZM136.41,500.2c-2.32,0-3.67,1.23-4.73,2.59l-.97-2.29h-3.6v16.14h4.58v-9.01c0-2.17,1.11-3.28,2.86-3.28s2.77,1.11,2.77,3.28v9.01h4.58v-10.45c0-3.7-2.02-5.99-5.48-5.99ZM121.85,502.12c1.2,1.2,1.75,2.98,1.75,5.15v9.37h-3.69l-.74-1.75c-1.11,1.23-2.65,2.05-4.88,2.05-3.04,0-5.54-1.75-5.54-4.94v-.06c0-3.52,2.68-5.15,6.51-5.15,1.63,0,2.8.27,3.95.66v-.27c0-1.9-1.17-2.95-3.46-2.95-1.63,0-2.82.29-4.17.77l-1.43-3.39c1.78-.78,3.52-1.29,6.26-1.29,2.5,0,4.31.66,5.45,1.81ZM119.25,510.13c-.78-.36-1.81-.6-2.92-.6-1.96,0-3.16.78-3.16,2.23v.06c0,1.23,1.02,1.96,2.5,1.96,2.14,0,3.58-1.17,3.58-2.83v-.81ZM101.41,516.64h4.58v-21.19h-4.58v21.19Z"/>
+    </g>
+  </g>
+</svg>
