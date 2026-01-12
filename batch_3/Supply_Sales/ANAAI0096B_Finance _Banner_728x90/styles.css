@@ -99,10 +99,10 @@ html, body {
 
 .copy1 {
   width: 600px;
-  top: 10px;
-  left: 25px;
-  font-size: 28.9px;
-  line-height: 33.61px;
+  top: 12px;
+  left: 26px;
+  font-size: 30.9px;
+  line-height: 33.430px;
   letter-spacing: 0.8px;
 }
 
@@ -146,7 +146,7 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-  left: 329px;
+  left: 289px;
 }
 #text-1c {
   color: #ffffff;

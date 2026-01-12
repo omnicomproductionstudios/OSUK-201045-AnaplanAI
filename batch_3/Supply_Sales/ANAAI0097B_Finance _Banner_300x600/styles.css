@@ -97,10 +97,10 @@ html, body {
 }
 
 .copy1 {
-  top: 115px;
-  left: 29px;
-  font-size: 37.5px;
-  line-height: 41.5px;
+  top: 114px;
+  left: 28px;
+  font-size: 39.5px;
+  line-height: 43.5px;
 }
 
 .copy2 {
@@ -142,16 +142,16 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-  top: 322px;
+  top: 331px;
   width: 100%;
 }
 #text-3 .intro{
-  top: -42px;
-  left: 181px;
+  top: -43.5px;
+  left: 166px;
   position: absolute;
 }
 #text-3 .direction{
-  /* top: 287px; */
+  top: 3px;
   position: absolute;
 }
 #text-1c {

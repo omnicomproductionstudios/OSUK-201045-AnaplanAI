@@ -99,9 +99,9 @@ html, body {
 
 .copy1 {
   top: 167px;
-  left: 14px;
-  font-size: 23.7px;
-  line-height: 27.5px;
+  left: 13px;
+  font-size: 23.9px;
+  line-height: 26.8px;
 }
 
 .copy2 {
@@ -141,8 +141,8 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-      top: 332px;
-    width: 100%;
+  top: 329px;
+  width: 100%;
 }
 #text-3 .intro{
   top: -30px;
