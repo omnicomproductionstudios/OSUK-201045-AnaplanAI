@@ -36,7 +36,7 @@ html, body {
   top:0px;
   width:300px;
   height:600px;
-  background-color: #0a2f46;
+  background-color: #fff;
 }
 
 #main {
@@ -97,10 +97,20 @@ html, body {
 }
 
 .copy1 {
-  top: 95px;
-  left: 28px;
-  font-size: 36.5px;
+  top: 57px;
+  left: 29px;
+  font-size: 32px;
   line-height: 40px;
+}
+
+#text-2{
+  line-height: 32px;
+  top: 62px;
+}
+.sees{
+  display: block;
+  position: absolute;
+  right: -5px;
 }
 
 .copy2 {
@@ -142,8 +152,10 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-    top: 297px;
-    width: 100%;
+  top: 329px;
+  width: 100%;
+  left: 27px;
+  line-height: 33px;
 }
 #text-3 .intro{
   top: -44px;
@@ -167,20 +179,20 @@ html, body {
 }
 #text-4{
   left: 27px;
-  top: 115px;
-  font-size: 48px;
-  line-height: 50.5px;
+  top: 202px;
+  font-size: 32px;
+  line-height: 35.45px;
   letter-spacing: 0.5px;
 }
 #text-4 sup{
   position: relative;
   font-size: 100%;
   line-height: 0px;
-  font-size: 21px;
+  font-size: 14px;
   font-weight: bold;
   display: inline-block;
-  top: -4.5px;
-  left: 1px;
+  top: -2.5px;
+  left: 0px;
 }
 #frame-1,
 #frame-2,
@@ -194,12 +206,13 @@ html, body {
 
   transform-origin: 26% 78%;
 }
-
+#frame-1, #frame-2{
+  transform-origin: 25% 83%;
+}
 #bg-1,
 #bg-1-icon {
     transform-origin: 43% 45%;
     z-index: 5;
-   
 }
 
 #solid {
@@ -232,16 +245,16 @@ html, body {
   text-align: -webkit-center;
   transform-origin: center;
   border-radius: 100px;
-  top: 509px;
-  left: 67px;
+  top: 531px;
+  left: 65px;
   background: none;
   border: 1.5px #ff6100 solid;
   color: #ffffff;
   font-size: 19.5px;
   line-height: 18px;
   letter-spacing: 0.02rem;
-  width: 164px;
-  height: 43px;
+  width: 168px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;

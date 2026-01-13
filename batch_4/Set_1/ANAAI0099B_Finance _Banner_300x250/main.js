@@ -51,7 +51,8 @@ function animate() {
 
   tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
-
+  
+  // tl1.to(['#cta'], 0,{ autoAlpha: 1 }, '<');
   tl1.from(split1 ? split1.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
 
   tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');

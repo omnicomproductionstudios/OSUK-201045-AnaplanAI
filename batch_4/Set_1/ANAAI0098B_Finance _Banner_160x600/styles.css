@@ -98,12 +98,15 @@ html, body {
 }
 
 .copy1 {
-  top: 167px;
+  top: 32px;
   left: 17px;
-  font-size: 20px;
+  font-size: 24.1px;
   line-height: 23.2px;
 }
-
+#text-2{
+  top: 56px;
+  line-height: 24.5px;
+}
 .copy2 {
   width: 135px;
   top: 166px;
@@ -141,8 +144,10 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-      top: 284px;
-    width: 100%;
+  top: 351px;
+  width: 100%;
+  line-height: 25px;
+  font-size: 24.5px;
 }
 #text-3 .intro{
   top: -30px;
@@ -160,19 +165,19 @@ html, body {
 #text-4{
   font-size: 28.5px;
   line-height: 33px;
-  top: 167px;
+  top: 209px;
   left: 16px;
   letter-spacing: 0.2px;
 }
 #text-4 sup{
-      position: relative;
-    font-size: 100%;
-    line-height: 0px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    top: -1px;
-    left: 0px;
+  position: relative;
+  font-size: 100%;
+  line-height: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+  top: -2.5px;
+  left: 1px;
 }
 #text-1b-container {
   width: 0px;
@@ -194,7 +199,9 @@ html, body {
 
   transform-origin: 15.8% 84.4%;
 }
-
+#frame-1, #frame-2{
+  transform-origin: 15.5% 88%;
+}
 #bg-1,
 #bg-1-icon {
     transform-origin: 44% 45%;
@@ -231,7 +238,7 @@ html, body {
   text-align: -webkit-center;
   transform-origin: center;
   border-radius: 100px;
-  top: 541px;
+  top: 547px;
   left: 19px;
   background: none;
   border: 1px #ff6100 solid;
