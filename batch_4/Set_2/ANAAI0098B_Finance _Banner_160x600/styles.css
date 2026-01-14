@@ -13,7 +13,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 /* sup, sub {
   vertical-align: baseline;
   position: relative;
@@ -23,7 +22,11 @@
 sub { 
   top: 0.4em; 
 } */
-
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 html, body {
   width:160px;
   height:600px;
@@ -98,90 +101,66 @@ html, body {
 }
 
 .copy1 {
-  top: 167px;
-  left: 14px;
-  font-size: 23.7px;
-  line-height: 27.5px;
+  left: 17px;
+  top: 29px;
+  font-size: 24.2px;
+  line-height: 29.5px;
+}
+#text-1b{
+  left: 17px;
+  top: 55px;
+  line-height: 25px;
+}
+#text-3{
+  top: 352px;
+  left: 18px;
+  font-size: 24px;
+  line-height: 24.5px;
 }
 
-.copy2 {
-  width: 135px;
-  top: 166px;
-  left: 15px;
-  font-size: 29px;
-  line-height: 35px;
+#text-4{
+  left: 18px;
+  top: 26px;
+  font-size: 38px;
+  line-height: 40px;
+  letter-spacing: 0.5px;
 }
-
-.copy3 {
-  font-size: 21px;
-  line-height: 24px;
+#text-4 sup{
+   position: relative;
+  font-size: 100%;
+  line-height: 0px;
+  font-size: 17px;
+  font-weight: bold;
+  display: inline-block;
+  top: -4px;
+  left: 0px;
 }
-
 .copy-legal {
   font-size: 7px;
   text-align: left;
 }
 
-#text-1 {
-  width: 160px;
-}
-
-#text-1b {
-  color: #ff6100;
-  /* background: #ff6100;
-  background: linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
-  background: -webkit-linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-}
-
-#text-1b,
-#text-3a,
-#text-4 {
-  color: #ff6100;
-}
-#text-3{
-      top: 332px;
-    width: 100%;
-}
-#text-3 .intro{
-  top: -30px;
-  left: 58px;
-  position: absolute;
-}
-#text-3 .direction{
-  /* top: 287px; */
-  position: absolute;
-}
-
-#text-1c {
-  color: #ffffff;
-}
 #text-4{
-  font-size: 28.5px;
+  left: 17px;
+  top: 209px;
+  font-size: 28px;
   line-height: 33px;
-  top: 167px;
-  left: 16px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
+  color: #ff6100;
+}
+#text-2{
+  left: 106px;
 }
 #text-4 sup{
-      position: relative;
-    font-size: 100%;
-    line-height: 0px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    top: -1px;
-    left: 0px;
+  position: relative;
+  font-size: 100%;
+  line-height: 0px;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  top: -2px;
+  left: 1px;
 }
-#text-1b-container {
-  width: 0px;
-  height: 600px;
-
-  overflow: hidden;
-
-}
-
 #frame-1,
 #frame-2,
 #frame-3,
@@ -191,18 +170,23 @@ html, body {
 
   width: 160px;
   height: 600px;
-
-  transform-origin: 15.8% 84.4%;
+  
+  transform-origin: 55% 87%;
+}
+#frame-1, #frame-2{
+  transform-origin: 6% 92%;
+}
+/* #bg-1-icon{
+  background-color: #0a2f46;
+} */
+#solid {
+  background-color: #0a2f46;
 }
 
 #bg-1,
 #bg-1-icon {
-    transform-origin: 44% 45%;
+    transform-origin: 41.3% 46.2%;
     z-index: 5;
-}
-
-#solid {
-  background-color: #0a2f46;
 }
 
 #icon-1,
@@ -231,16 +215,16 @@ html, body {
   text-align: -webkit-center;
   transform-origin: center;
   border-radius: 100px;
-  top: 541px;
-  left: 19px;
+  top: 547px;
+  right: 18px;
   background: none;
   border: 1px #ff6100 solid;
   color: #ffffff;
-  font-size: 14.5px;
-  line-height: 18px;
+  font-size: 14.4px;
+  line-height: 12px;
   letter-spacing: 0.02rem;
-  width: 121px;
-  height: 30px;
+  width: 123px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,11 +234,10 @@ html, body {
 #cta-2 {
   background: #0a2f46;
   border: none;
-  width: 123px;
-  height: 32px;
-  left: 19px;
-  top: 541px;
+  width: 89px;
+  height: 25px;
 }
+
 #cta-text {
   position: relative;
   /* top: 1px; */
@@ -267,12 +250,12 @@ html, body {
   height: 13px;
 }
 
-.logo {
-  width: 166px;
+/* .logo {
+  width: 113px;
 
-  top: 453px;
-  left: 67px;
-}
+  top: 204px;
+  left: 160px;
+} */
 
 #bgExit {
   position: absolute;
@@ -288,4 +271,63 @@ html, body {
   -ms-box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
+}
+
+.box{
+  position: relative;
+  left: 22px;
+  top:206px;
+  width: 123px;
+  height: 218px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0b3a5f 0%, #0f4f7d 40%, #0b3a5f 70%, #0a2f55 100%);
+  box-shadow: inset 0 0 0 0.5px rgba(60, 180, 255, 0.35), inset 0 0 30px rgba(0, 120, 200, 0.35), 0 0 40px rgba(0, 120, 255, 0.25);
+  overflow: hidden;
+  padding: 6px;
+}
+
+.inner-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.inner-box img{
+  width: 100%;
+  transform: translate(0px, -1px);
+}
+.logo{
+  width: 124px;
+  top: 512px;
+  left: 18px;
+  position: absolute;
+}
+
+.star{
+  position: absolute;
+  top: 179px;
+  left: 29px;
+  width: 20px;
+}
+.star2{
+  left: 108px;
+  top: 433px;
+  width: 10px;
+}
+.star3{
+  top: 57px;
+  left: 85px;
+  width: 6px;
+}
+.card1{
+  position: absolute;
+  left: 55px;
+  top: 160px;
+  width: 76px;
+}
+.card2{
+  position: absolute;
+  left: 14px;
+  top: 394px;
+  width: 81px;
 }
