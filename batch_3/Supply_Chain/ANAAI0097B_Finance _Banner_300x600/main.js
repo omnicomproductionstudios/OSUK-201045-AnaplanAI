@@ -98,35 +98,45 @@ function shuffle(array) {
 }
 
 function applyGradientText(splitInstance) {
-  const gradientStyle = "linear-gradient(117deg, #ff9757 0%, #ff6100 100%)";
-  const parent = document.getElementById("text-1b");
-  if (!parent) return;
+  const gradientStyle = "linear-gradient(117deg, #ff9757 10%, #ff6100 100%)";
 
-  // Apply to parent
-  const parentRect = parent.getBoundingClientRect();
-  const parentWidth = parentRect.width || parent.offsetWidth || 0;
-  const parentHeight = parentRect.height || parent.offsetHeight || 0;
-  parent.style.backgroundImage = gradientStyle;
-  parent.style.webkitBackgroundClip = "text";
-  parent.style.backgroundClip = "text";
-  parent.style.webkitTextFillColor = "transparent";
-  parent.style.color = "transparent";
-  parent.classList.add("split-gradient");
+  // 👇 class based selection
+  const parents = document.querySelectorAll(".TextGradiat");
+  if (!parents.length) return;
 
-  // Align gradient across chars so it remains continuous
-  const chars = (splitInstance && splitInstance.chars) || [];
-  chars.forEach(char => {
-    const rect = char.getBoundingClientRect();
-    const offset = rect.left - parentRect.left;
-    const offsetY = rect.top - parentRect.top;
-    char.style.backgroundImage = gradientStyle;
-    char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
-    char.style.backgroundPosition = `-${offset}px -${offsetY}px`;
-    char.style.backgroundRepeat = "no-repeat";
-    char.style.webkitBackgroundClip = "text";
-    char.style.backgroundClip = "text";
-    char.style.webkitTextFillColor = "transparent";
-    char.style.color = "transparent";
+  parents.forEach(parent => {
+    const parentRect = parent.getBoundingClientRect();
+    const parentWidth = parentRect.width || parent.offsetWidth || 0;
+    const parentHeight = parentRect.height || parent.offsetHeight || 0;
+
+    // Apply to parent
+    parent.style.backgroundImage = gradientStyle;
+    parent.style.webkitBackgroundClip = "text";
+    parent.style.backgroundClip = "text";
+    parent.style.webkitTextFillColor = "transparent";
+    parent.style.color = "transparent";
+    parent.classList.add("split-gradient");
+
+    // 👇 chars jo isi parent ke andar ho
+    const chars =
+      (splitInstance && splitInstance.chars || []).filter(char =>
+        parent.contains(char)
+      );
+
+    chars.forEach(char => {
+      const rect = char.getBoundingClientRect();
+      const offsetX = rect.left - parentRect.left;
+      const offsetY = rect.top - parentRect.top;
+
+      char.style.backgroundImage = gradientStyle;
+      char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
+      char.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
+      char.style.backgroundRepeat = "no-repeat";
+      char.style.webkitBackgroundClip = "text";
+      char.style.backgroundClip = "text";
+      char.style.webkitTextFillColor = "transparent";
+      char.style.color = "transparent";
+    });
   });
 }
 

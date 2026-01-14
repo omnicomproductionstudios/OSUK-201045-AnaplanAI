@@ -98,7 +98,7 @@ html, body {
 
 .copy1 {
   left: 19px;
-  top: 25.2px;
+  top: 14.2px;
   font-size: 25.6px;
   line-height: 29.5px;
 }
@@ -138,12 +138,12 @@ html, body {
   color: #ff6100;
 }
 #text-3{
-  top: 158px;
+  top: 176.5px;
   width: 100%;
 }
 #text-3 .intro{
   top: -45px;
-  left: 109px;
+  left: 107px;
   position: absolute;
 }
 #text-3 .direction{
