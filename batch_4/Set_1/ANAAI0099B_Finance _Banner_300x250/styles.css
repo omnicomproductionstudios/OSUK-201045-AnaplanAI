@@ -117,21 +117,21 @@ html, body {
 }
 
 #text-4{
-  left: 18px;
-  top: 26px;
-  font-size: 38px;
-  line-height: 40px;
-  letter-spacing: 0.5px;
+  font-size: 28.5px;
+  line-height: 33px;
+  top: 167px;
+  left: 16px;
+  letter-spacing: 0.2px;
 }
 #text-4 sup{
-   position: relative;
-  font-size: 100%;
-  line-height: 0px;
-  font-size: 17px;
-  font-weight: bold;
-  display: inline-block;
-  top: -4px;
-  left: 0px;
+      position: relative;
+    font-size: 100%;
+    line-height: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    top: -1px;
+    left: 0px;
 }
 .copy-legal {
   font-size: 7px;
