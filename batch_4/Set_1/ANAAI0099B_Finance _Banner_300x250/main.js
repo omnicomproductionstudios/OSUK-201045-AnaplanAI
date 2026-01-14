@@ -62,9 +62,9 @@ function animate() {
 
   .to(['.star1, .star2, .star3'], 0.5, {y: -47, ease: "sine.inOut", stagger: 0.01}, "<+0.05");
 
-  tl1.to([], 0.5,{ autoAlpha: o, ease: "power1.in", }, '+=0.5');
   tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
-  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
+  tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=0.2');
+  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '<+0.05');
 
 }
 

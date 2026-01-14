@@ -136,66 +136,6 @@ function applyGradientText(splitInstance) {
     });
   });
 }
-
-function randomInt(min, max) { // min and max included 
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function randomNum(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex > 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
-function applyGradientText(splitInstance) {
-  const gradientStyle = "linear-gradient(117deg, #ff9757 0%, #ff6100 100%)";
-  const parent = document.getElementById("text-1b");
-  if (!parent) return;
-
-  // Apply to parent
-  const parentRect = parent.getBoundingClientRect();
-  const parentWidth = parentRect.width || parent.offsetWidth || 0;
-  const parentHeight = parentRect.height || parent.offsetHeight || 0;
-  parent.style.backgroundImage = gradientStyle;
-  parent.style.webkitBackgroundClip = "text";
-  parent.style.backgroundClip = "text";
-  parent.style.webkitTextFillColor = "transparent";
-  parent.style.color = "transparent";
-  parent.classList.add("split-gradient");
-
-  // Align gradient across chars so it remains continuous
-  const chars = (splitInstance && splitInstance.chars) || [];
-  chars.forEach(char => {
-    const rect = char.getBoundingClientRect();
-    const offset = rect.left - parentRect.left;
-    const offsetY = rect.top - parentRect.top;
-    char.style.backgroundImage = gradientStyle;
-    char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
-    char.style.backgroundPosition = `-${offset}px -${offsetY}px`;
-    char.style.backgroundRepeat = "no-repeat";
-    char.style.webkitBackgroundClip = "text";
-    char.style.backgroundClip = "text";
-    char.style.webkitTextFillColor = "transparent";
-    char.style.color = "transparent";
-  });
-}
 function endTime() {
   // show total banner animation time in browser console.
   var endTime = new Date();
