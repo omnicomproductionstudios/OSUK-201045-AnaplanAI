@@ -49,12 +49,14 @@ function animate() {
   tl1.to(['#icon-2'], 0.5,{ x: '-=150' }, 0);
   tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0');
 
-  tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
+  tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "sine.inOut", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
   
+  tl1.to(['#frame-1'], 0,{ autoAlpha: 0,ease: "power1.in", }, '<');
+
   tl1.from(split1 ? split1.chars : "#text-1a", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
   tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
-  tl1.to(["#text-1a, #text-1b"], 0.5,{ease: Power2.easeInOut, autoAlpha: 0 }, '+=0.5');
+  tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
 
   tl1.to(".box", 0.5, {y:-48, ease: "sine.inOut",}, "+=0.2")
   tl1.to(".card", 0.5, {y:-48, ease: "sine.inOut",}, "<+0.05")
@@ -63,8 +65,8 @@ function animate() {
   .to(['.star1, .star2, .star3'], 0.5, {y: -47, ease: "sine.inOut", stagger: 0.01}, "<+0.05");
 
   tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
-  tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=0.2');
-  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '<+0.05');
+  tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=2');
+  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '<+0.2');
 
 }
 
