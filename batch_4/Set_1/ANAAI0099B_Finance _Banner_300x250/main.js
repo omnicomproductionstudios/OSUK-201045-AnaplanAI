@@ -28,8 +28,8 @@ function animate() {
   // Split text for animations
   let split1, split2, split3, split4;
   try {
-    split1 = new SplitText("#text-1b", { type: "words, chars" });
-    split2 = new SplitText("#text-2", { type: "words, chars" });
+    split1 = new SplitText("#text-1a", { type: "words, chars" });
+    split2 = new SplitText("#text-1b", { type: "words, chars" });
     split3 = new SplitText("#text-3", { type: "words, chars" });
     split4 = new SplitText("#text-4", { type: "words, chars" });
   } catch (err) {
@@ -52,22 +52,18 @@ function animate() {
   tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
   
-  // tl1.to(['#cta'], 0,{ autoAlpha: 1 }, '<');
-  tl1.from(split1 ? split1.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
+  tl1.from(split1 ? split1.chars : "#text-1a", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
+  tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
+  tl1.to(["#text-1a, #text-1b"], 0.5,{ease: Power2.easeInOut, autoAlpha: 0 }, '+=0.5');
 
-  tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
-  tl1.to(['#text-1b'], 0,{ webkitTextFillColor: '#ff6100' }, '<');
+  tl1.to(".box", 0.5, {y:-48, ease: "sine.inOut",}, "+=0.2")
+  tl1.to(".card", 0.5, {y:-48, ease: "sine.inOut",}, "<+0.05")
+  tl1.to(".photo", 0.5, {transform: 'translate(0px, 0px)', ease: "sine.inOut",}, "<")
 
-  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=0.5');
-  tl1.to(['#frame-1'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
-  tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
+  .to(['.star1, .star2, .star3'], 0.5, {y: -47, ease: "sine.inOut", stagger: 0.01}, "<+0.05");
 
-  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.1');
-
-  tl1.to(['#logo-2'], 0,{ autoAlpha: 0 }, '+=1');
-  tl1.to(['#frame-2'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
-  tl1.to(['#frame-2'], 0,{autoAlpha: 0 }, '+=0');
-  
+  tl1.to([], 0.5,{ autoAlpha: o, ease: "power1.in", }, '+=0.5');
+  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
   tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
 
 }
@@ -100,35 +96,45 @@ function shuffle(array) {
   return array;
 }
 function applyGradientText(splitInstance) {
-  const gradientStyle = "linear-gradient(117deg, #ff9757 0%, #ff6100 100%)";
-  const parent = document.getElementById("text-1b");
-  if (!parent) return;
+  const gradientStyle = "linear-gradient(117deg, #ff9757 10%, #ff6100 100%)";
 
-  // Apply to parent
-  const parentRect = parent.getBoundingClientRect();
-  const parentWidth = parentRect.width || parent.offsetWidth || 0;
-  const parentHeight = parentRect.height || parent.offsetHeight || 0;
-  parent.style.backgroundImage = gradientStyle;
-  parent.style.webkitBackgroundClip = "text";
-  parent.style.backgroundClip = "text";
-  parent.style.webkitTextFillColor = "transparent";
-  parent.style.color = "transparent";
-  parent.classList.add("split-gradient");
+  // 👇 class based selection
+  const parents = document.querySelectorAll(".TextGradiat");
+  if (!parents.length) return;
 
-  // Align gradient across chars so it remains continuous
-  const chars = (splitInstance && splitInstance.chars) || [];
-  chars.forEach(char => {
-    const rect = char.getBoundingClientRect();
-    const offset = rect.left - parentRect.left;
-    const offsetY = rect.top - parentRect.top;
-    char.style.backgroundImage = gradientStyle;
-    char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
-    char.style.backgroundPosition = `-${offset}px -${offsetY}px`;
-    char.style.backgroundRepeat = "no-repeat";
-    char.style.webkitBackgroundClip = "text";
-    char.style.backgroundClip = "text";
-    char.style.webkitTextFillColor = "transparent";
-    char.style.color = "transparent";
+  parents.forEach(parent => {
+    const parentRect = parent.getBoundingClientRect();
+    const parentWidth = parentRect.width || parent.offsetWidth || 0;
+    const parentHeight = parentRect.height || parent.offsetHeight || 0;
+
+    // Apply to parent
+    parent.style.backgroundImage = gradientStyle;
+    parent.style.webkitBackgroundClip = "text";
+    parent.style.backgroundClip = "text";
+    parent.style.webkitTextFillColor = "transparent";
+    parent.style.color = "transparent";
+    parent.classList.add("split-gradient");
+
+    // 👇 chars jo isi parent ke andar ho
+    const chars =
+      (splitInstance && splitInstance.chars || []).filter(char =>
+        parent.contains(char)
+      );
+
+    chars.forEach(char => {
+      const rect = char.getBoundingClientRect();
+      const offsetX = rect.left - parentRect.left;
+      const offsetY = rect.top - parentRect.top;
+
+      char.style.backgroundImage = gradientStyle;
+      char.style.backgroundSize = `${parentWidth}px ${parentHeight}px`;
+      char.style.backgroundPosition = `-${offsetX}px -${offsetY}px`;
+      char.style.backgroundRepeat = "no-repeat";
+      char.style.webkitBackgroundClip = "text";
+      char.style.backgroundClip = "text";
+      char.style.webkitTextFillColor = "transparent";
+      char.style.color = "transparent";
+    });
   });
 }
 function endTime() {

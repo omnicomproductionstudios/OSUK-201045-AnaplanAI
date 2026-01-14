@@ -22,6 +22,78 @@ function init() {
   animate();
 }
 
+function animate() {
+  // Split text for animations
+  let split1, split2, split3, split4;
+  try {
+    split1 = new SplitText("#text-1b", { type: "words, chars" });
+    split2 = new SplitText("#text-2", { type: "words, chars" });
+    split3 = new SplitText("#text-3", { type: "words, chars" });
+    split4 = new SplitText("#text-4", { type: "words, chars" });
+  } catch (err) {
+    console.warn("SplitText failed to initialize; showing text without split animations", err);
+  }
+
+  // Ensure gradient styles apply on the whole phrase (no per-char gradient)
+  applyGradientText(split1);
+
+  // tl1.set(["#main_content"], { autoAlpha: 1, force3D: true });
+  tl1.set(["#cta"], { force3D: false, rotation: .001 });
+
+  tl1.to(['#main'], 0.5,{ autoAlpha: 1 }, 0);
+  tl1.to(['#icon-1', '#icon-2'], 0.5,{ y: '-=600' }, 0);
+  tl1.to(['#icon-1'], 0.5,{ x: '+=150' }, 0);
+  tl1.to(['#icon-2'], 0.5,{ x: '-=150' }, 0);
+  tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0');
+
+  tl1.to(['#bg-1-icon'], 0.5,{ scale: 18, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
+  tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
+
+  tl1.from(split1 ? split1.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
+
+  tl1.from(split2 ? split2.chars : "#text-2", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
+
+  tl1.to(['#logo-1'], 0,{ autoAlpha: 0 }, '+=0.5');
+  tl1.to(['#frame-1'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
+  tl1.to(['#frame-1'], 0,{autoAlpha: 0 }, '+=0');
+
+  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '-=0.1');
+
+  tl1.to(['#logo-2'], 0,{ autoAlpha: 0 }, '+=1');
+  tl1.to(['#frame-2'], 0.5,{ scale: 100, rotation: 0.1, ease: "power1.in", force3D: false }, '+=0');
+  tl1.to(['#frame-2'], 0,{autoAlpha: 0 }, '+=0');
+  
+  tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
+
+}
+
+function randomInt(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function randomNum(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
 function applyGradientText(splitInstance) {
   const gradientStyle = "linear-gradient(117deg, #ff9757 10%, #ff6100 100%)";
 
