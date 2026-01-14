@@ -273,8 +273,8 @@ html, body {
 
 .box{
   position: relative;
-  left: 94px;
-  top: 63px;
+  left: 97px;
+  top: 72px;
   width: 168px;
   height: 117px;
   border-radius: 10px;
@@ -317,24 +317,23 @@ html, body {
 
 .star{
   position: absolute;
-  top: 167px;
-  left: 54px;
+  top: 176px;
+  left: 57px;
   width: 18px;
 }
 .star2{
-  left: 272px;
-  top: 117px;
+  left: 275px;
+  top: 126px;
   width: 6px;
 }
 .star3{
-  top: 57px;
-  left: 85px;
+  top: 66px;
+  left: 88px;
   width: 6px;
 }
 .card{
   position: absolute;
-  left: 23px;
-  top: 79px;
+  left: 26px;
+  top: 88px;
   width: 87px;
-  
 }
