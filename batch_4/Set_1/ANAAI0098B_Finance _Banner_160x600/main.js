@@ -44,12 +44,12 @@ function animate() {
   tl1.set(["#cta"], { force3D: false, rotation: .001 });
 
   tl1.to(['#main'], 0.5,{ autoAlpha: 1 }, 0);
-  tl1.to(['#icon-1', '#icon-2'], 0.5,{ y: '-=250' }, 0);
+  tl1.to(['#icon-1', '#icon-2'], 0.5,{ y: '-=600' }, 0);
   tl1.to(['#icon-1'], 0.5,{ x: '+=150' }, 0);
   tl1.to(['#icon-2'], 0.5,{ x: '-=150' }, 0);
-  tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0');
+  tl1.to(['#bg-1', '#icon-1', '#icon-2'], 0.5,{ autoAlpha: 0 }, '+=0.1');
 
-  tl1.to(['#bg-1-icon'], 0.5,{ scale: 35, rotation: 0.1, ease: "sine.inOut", force3D: false }, 1);
+  tl1.to(['#bg-1-icon'], 0.5,{ scale: 18, rotation: 0.1, ease: "power1.in", force3D: false }, 1);
   tl1.to(['#icon-1', '#icon-2', '#bg-1'], 0,{ autoAlpha: 0 }, '+=0');
   
   tl1.to(['#frame-1'], 0,{ autoAlpha: 0,ease: "power1.in", }, '<');
@@ -58,13 +58,13 @@ function animate() {
   tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
   tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
 
-  tl1.to(".box", 0.5, {y:-126, ease: "sine.inOut",}, "+=0.2")
-  tl1.to(".card", 0.5, {y:-125, ease: "sine.inOut",}, "<+0.05")
-  tl1.to(".photo", 0.5, {transform: 'translate(0px, 0px)', ease: "sine.inOut",}, "<")
+  tl1.to(".box", 1, {y:-126, ease: "power2.out",}, "+=0.2")
+  tl1.to(".card", 1, {y:-126, ease: "power2.out", stagger: 0.05}, "<+0.10")
+  tl1.to(".photo", 0.7, {transform: 'translate(0px, 0px)', ease: "power2.out",}, "<")
 
-  .to(['.star1, .star2'], 0.5, {y: -124.6708, ease: "sine.inOut", stagger: 0.01}, "<+0.05");
+  .to(['.star1, .star2'], 1, {y: -124.6708,  ease: "power2.out", stagger: 0.01}, "<+0.12");
 
-  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.5');
+  tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.1');
   tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=2');
   tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '<+0.2');
 
