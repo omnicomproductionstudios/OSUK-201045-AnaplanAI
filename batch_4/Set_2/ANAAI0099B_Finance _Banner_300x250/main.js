@@ -59,7 +59,7 @@ function animate() {
   tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
 
   tl1.to(".box", 0.5, {y:-48, ease: "power1.out",}, "+=0.2")
-  tl1.to(".card", 0.5, {y:-48, ease: "power1.out",}, "<+0.10")
+  tl1.to(".card", 0.5, {y:-48, ease: "power1.out",}, "<")
   tl1.to(".photo", 0.4, {transform: 'translate(0px, 0px)', ease: "power1.out",}, "<")
 
   .to(['.star1, .star2, .star3'], 0.5, {y: -47,  ease: "power1.out", stagger: 0.01}, "<");
