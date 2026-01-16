@@ -58,11 +58,11 @@ function animate() {
   tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
   tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
 
-  tl1.to(".box", 1, {y:-48, ease: "power2.out",}, "+=0.2")
-  tl1.to(".card", 1, {y:-48, ease: "power2.out",}, "<+0.10")
-  tl1.to(".photo", 0.7, {transform: 'translate(0px, 0px)', ease: "power2.out",}, "<")
+  tl1.to(".box", 0.5, {y:-48, ease: "power1.out",}, "+=0.2")
+  tl1.to(".card", 0.5, {y:-48, ease: "power1.out",}, "<+0.10")
+  tl1.to(".photo", 0.4, {transform: 'translate(0px, 0px)', ease: "power1.out",}, "<")
 
-  .to(['.star1, .star2, .star3'], 1, {y: -47,  ease: "power2.out", stagger: 0.01}, "<+0.12");
+  .to(['.star1, .star2, .star3'], 0.5, {y: -47,  ease: "power1.out", stagger: 0.01}, "<");
 
   tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.1');
   tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=2');
