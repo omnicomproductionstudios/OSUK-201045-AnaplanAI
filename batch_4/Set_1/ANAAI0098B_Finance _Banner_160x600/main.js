@@ -58,7 +58,7 @@ function animate() {
   tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>');
   tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
 
-  tl1.to(".box", 0.5, {y:-126, ease: "power1.out",}, "+=0.2")
+  tl1.to(".box", 0.5, {y:-126, ease: "power1.out",}, ">")
   tl1.to(".card", 0.5, {y:-126, ease: "power1.out", stagger: 0.05}, "<")
   tl1.to(".photo", 0.5, {transform: 'translate(0px, 0px)', ease: "power1.out",}, "<")
 

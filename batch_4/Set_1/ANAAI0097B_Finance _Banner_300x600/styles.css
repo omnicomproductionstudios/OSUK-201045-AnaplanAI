@@ -237,7 +237,7 @@ html, body {
 }
 .inner-box img{
   width: 100%;
-  transform: translate(0px, -205px);
+  transform: translate(0px, 1px);
 }
 .logo{
   width: 169px;

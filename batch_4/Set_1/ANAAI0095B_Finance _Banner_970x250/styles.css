@@ -97,78 +97,14 @@ html, body {
 }
 
 .copy1 {
-  width: 600px;
-  top: 71px;
+  top: 80px;
   left: 41px;
   font-size: 33px;
-  line-height: 55px;
+  line-height: 37px;
   letter-spacing: 1.2px;
 }
-#text-2 {
-    line-height: 36px;
-    top: 80px;
-}
-.sees {
-    display: block;
-    position: absolute;
-    left: 182px;
-}
-.copy2 {
-  width: 600px;
-
-  top: 53px;
-  left: 50px;
-
-  font-size: 62px;
-  line-height: 72px;
-}
-
-.copy3 {
-  font-size: 21px;
-  line-height: 24px;
-}
-
-.copy-legal {
-  font-size: 7px;
-  text-align: left;
-}
-
-#text-1 {
-  width: 970px;
-}
-
-#text-1b {
-  color: #ff6100;
-  width: 270px;
-  /* background: #ff6100;
-  background: linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
-  background: -webkit-linear-gradient(0deg,rgba(255, 151, 86, 1) 0%, rgba(255, 107, 17, 1) 33%, rgba(255, 107, 17, 1) 66%, rgba(255, 96, 0, 1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-}
-
-#text-1b,
-#text-3a,
-#text-4 {
-  color: #ff6100;
-}
-
-#text-1c {
-  color: #ffffff;
-}
-
-#text-1b-container {
-  width: 0px;
-  height: 250px;
-
-  overflow: hidden;
-
-}
 #text-3{
-  top: 80px;
   left: 400px;
-  font-size: 33.4px;
-  line-height: 37px;
 }
 #text-4{
   width: 600px;
@@ -177,6 +113,7 @@ html, body {
   font-size: 41px;
   line-height: 69px;
   letter-spacing: 0.4px;
+  color: #ff6100;
 }
 #text-4 sup{
   position: relative;
@@ -189,8 +126,6 @@ html, body {
   left: -1px;
 }
 #frame-1,
-#frame-2,
-#frame-3,
 #solid {
   top: 0;
   left: 0;
@@ -200,7 +135,7 @@ html, body {
 
   transform-origin: 78.4% 31%;
 }
-#frame-1, #frame-2{
+#frame-1{
   transform-origin: 83.9% 40%;
 }
 #bg-1,
@@ -230,9 +165,7 @@ html, body {
   left: 150px;
 }
 
-#cta,
-#cta-2,
-#cta-3 {
+#cta{
   position: absolute;
   text-align: center;
   text-align: -moz-center;
@@ -253,15 +186,6 @@ html, body {
   justify-content: center;
   align-items: center;
   font-family: 'inter-regular';
-}
-
-#cta-2 {
-  background: #0a2f46;
-  border: none;
-  width: 180px;
-  height: 48px;
-  top: 135px;
-  left: 745px;
 }
 
 #cta-text {
@@ -297,4 +221,57 @@ html, body {
   -ms-box-sizing:border-box;
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
+}
+
+.box{
+  position: relative;
+  left: 484px;
+  top: 37px;
+  width: 234px;
+  height: 160px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0b3a5f 0%, #0f4f7d 40%, #0b3a5f 70%, #0a2f55 100%);
+  box-shadow: inset 0 0 0 0.5px rgba(60, 180, 255, 0.35), inset 0 0 30px rgba(0, 120, 200, 0.35), 0 0 40px rgba(0, 120, 255, 0.25);
+  overflow: hidden;
+  padding: 6px;
+}
+
+.inner-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.inner-box img{
+  width: 468px;
+  transform: translate(0px, 0px);
+}
+.logo{
+  width: 138px;
+  top: 87px;
+  left: 804px;
+  position: absolute;
+}
+
+.star{
+  position: absolute;
+  top: 191px;
+  left: 425px;
+  width: 25px;
+}
+.star2{
+  left: 731px;
+  top: 224px;
+  width: 8px;
+}
+.star3{
+  top: 30px;
+  left: 470px;
+  width: 8px;
+}
+.card2{
+  position: absolute;
+  left: 379px;
+  top: 61px;
+  width: 127px;
 }

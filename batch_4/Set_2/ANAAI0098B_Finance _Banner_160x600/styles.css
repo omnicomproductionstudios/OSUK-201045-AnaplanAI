@@ -176,9 +176,7 @@ html, body {
 #frame-1, #frame-2{
   transform-origin: 6% 92%;
 }
-/* #bg-1-icon{
-  background-color: #0a2f46;
-} */
+
 #solid {
   background-color: #0a2f46;
 }
