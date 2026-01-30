@@ -58,11 +58,11 @@ applyGradientText(split1);
   tl1.from(split1 ? split1.chars : "#text-1a", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05 }, '+=0.5');
   tl1.from(split2 ? split2.chars : "#text-1b", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '>-0.5');
   tl1.to(["#text-1a, #text-1b"], 0.5,{ease: "power1.in", autoAlpha: 0 }, '+=1');
-  tl1.to(".box", 0.5, {x:-353, ease: "power1.out",}, ">")
-  tl1.to(".card", 0.5, {x:-353, ease: "power1.out"}, "<")
-  tl1.to(".photo", 0.5, {transform: 'translate(-234px, 0px)', ease: "power1.out",}, "<")
 
-  .to(['.star1, .star2, .star3'], 0.5, {x: -353,  ease: "power1.out", stagger: 0.01}, "<");
+  tl1.to(".box", 0.5, {x:-353, ease: "power1.out",}, ">");
+  tl1.to(".photo", 0.4, {transform: 'translate(-234px, 0px)', ease: "power1.out",}, "<");
+  tl1.to([".star1", ".star2", ".star3"], {x: -353, ease: "power1.out", stagger: 0.01}, "<"); //stagger: 0.05
+  tl1.to(".card", 0.5, {x:-353, ease: "power1.out",}, "<+0.07");
 
   tl1.from(split3 ? split3.chars : "#text-3", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0.1');
   tl1.to(['.star, .box, .card, .photo, #text-3'], 0.2,{ autoAlpha: 0, ease: "power1.in", }, '+=2');
