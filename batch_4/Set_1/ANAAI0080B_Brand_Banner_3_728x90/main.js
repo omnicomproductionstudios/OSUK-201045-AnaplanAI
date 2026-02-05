@@ -21,6 +21,7 @@ function init() {
   // Set Global Timeline
   tl1 = new TimelineMax({ onComplete: endTime });
   animate();
+  setRollover();
 }
 
 function animate() {
@@ -145,6 +146,7 @@ function endTime() {
 
 // CTA grow on hover
 
+
 function setRollover() {
   document
     .getElementById("bgExit")
@@ -155,11 +157,11 @@ function setRollover() {
 }
 
 function default_over(event) {
-  TweenMax.to(["#cta", "#cta-shine-container"], 0.3, { scale: 1.1, ease: Power1.easeOut, delay: 0 });
+  TweenMax.to(["#cta"], 0.3, { scale: 1.1, ease: Power1.easeOut, delay: 0 });
 }
 
 function default_out(event) {
-  TweenMax.to(["#cta", "#cta-shine-container"], 0.3, { scale: 1, ease: Power1.easeOut, delay: 0 });
+  TweenMax.to(["#cta"], 0.3, { scale: 1, ease: Power1.easeOut, delay: 0 });
 }
 
 function randomInt(min, max) { // min and max included 

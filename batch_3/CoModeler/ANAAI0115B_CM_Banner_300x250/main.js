@@ -22,6 +22,7 @@ function init() {
   // Set Global Timeline
   tl1 = new TimelineMax({ onComplete: endTime });
   animate();
+  setRollover();
 }
 
 function animate() {
@@ -70,6 +71,20 @@ function animate() {
   tl1.from(split4 ? split4.chars : "#text-4", 0.1, { y: -20, autoAlpha: 0, stagger: 0.05,}, '+=0');
 
 }
+
+// function setRollover() {
+//   document.getElementById('bgExit').addEventListener('mouseover', defaultOver, false);
+//   document.getElementById('bgExit').addEventListener('mouseout', defaultOut, false);
+// }
+
+// function defaultOver() {
+//   gsap.to('#cta', 0.15, { scale: 1.1, ease: Power1.easeInOut })
+// }
+
+// function defaultOut() {
+//   gsap.to('#cta', 0.15, { scale: 1, ease: Power1.easeInOut })
+// }
+
 
 function randomInt(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -161,11 +176,11 @@ function setRollover() {
 }
 
 function default_over(event) {
-  TweenMax.to(["#cta", "#cta-shine-container"], 0.3, { scale: 1.1, ease: Power1.easeOut, delay: 0 });
+  TweenMax.to(["#cta", "#cta-2", "#cta-3"], 0.3, { scale: 1.1, ease: Power1.easeOut, delay: 0 });
 }
 
 function default_out(event) {
-  TweenMax.to(["#cta", "#cta-shine-container"], 0.3, { scale: 1, ease: Power1.easeOut, delay: 0 });
+  TweenMax.to(["#cta", "#cta-2", "#cta-3"], 0.3, { scale: 1, ease: Power1.easeOut, delay: 0 });
 }
 
 function randomInt(min, max) { // min and max included 
