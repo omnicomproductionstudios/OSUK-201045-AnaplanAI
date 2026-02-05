@@ -284,3 +284,10 @@ html, body {
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
 }
+
+#txt-1, #text-2, #text-1c, #text-1b, #text-3, #text-3a, #text-4{
+  -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
