@@ -1,94 +1,90 @@
 var startTime;
 var tl1;
 
+// 1. Register Plugin Defensively
 if (typeof gsap !== "undefined" && typeof SplitText !== "undefined") {
-  gsap.registerPlugin(SplitText);
+    gsap.registerPlugin(SplitText);
 }
 
 function init() {
-  // Ensure the container is visible, but text remains hidden via CSS
-  gsap.set("#main", { autoAlpha: 1 });
-  
-  if (document.fonts) {
-    document.fonts.ready.then(startAnimation);
-  } else {
-    setTimeout(startAnimation, 500);
-  }
+    // Hide frames initially via JS if CSS hasn't done it
+    gsap.set(["#text-1b", "#text-2", "#text-3", "#text-4"], { autoAlpha: 0 });
+    
+    if (document.fonts) {
+        document.fonts.ready.then(startAnimation);
+    } else {
+        setTimeout(startAnimation, 500);
+    }
 }
 
 function startAnimation() {
-  startTime = new Date();
-  tl1 = gsap.timeline({ onComplete: endTime });
-  animate();
-  setRollover();
+    startTime = new Date();
+    tl1 = gsap.timeline({ onComplete: endTime });
+    animate();
+    setRollover();
 }
 
 function animate() {
-  // 1. Setup Splits
-  let split1 = new SplitText("#text-1b", { type: "chars" });
-  let split2 = new SplitText("#text-2", { type: "chars" });
-  let split3 = new SplitText("#text-3", { type: "chars" });
-  let split4 = new SplitText("#text-4", { type: "chars" });
+    let split1, split2, split3, split4;
 
-  // 2. FORCE INITIAL HIDDEN STATE (Prevents "everything at once")
-  // We use autoAlpha: 0 and y: -20 so Safari knows where they start
-  gsap.set([split1.chars, split2.chars, split3.chars, split4.chars], { 
-    autoAlpha: 0, 
-    y: -20 
-  });
-  
-  // Show the parent containers now that children are hidden
-  gsap.set(["#text-1b", "#text-2", "#text-3", "#text-4"], { autoAlpha: 1 });
+    // Check if SplitText is actually loaded
+    const isSplitLoaded = typeof SplitText !== "undefined";
 
-  applyGradientText(split1);
+    if (isSplitLoaded) {
+        try {
+            // 'segmenter: false' prevents the Safari 13/14 Intl error
+            split1 = new SplitText("#text-1b", { type: "chars", segmenter: false });
+            split2 = new SplitText("#text-2", { type: "chars", segmenter: false });
+            split3 = new SplitText("#text-3", { type: "chars", segmenter: false });
+            split4 = new SplitText("#text-4", { type: "chars", segmenter: false });
 
-  // 3. Timeline
-  tl1.to(['#icon-1', '#icon-2'], { duration: 0.5, y: -250 }, 0)
-     .to('#icon-1', { duration: 0.5, x: 150 }, 0)
-     .to('#icon-2', { duration: 0.5, x: -150 }, 0)
-     .to(['#bg-1', '#icon-1', '#icon-2'], { duration: 0.5, autoAlpha: 0 }, 0.5);
+            // Set chars to hidden immediately
+            gsap.set([split1.chars, split2.chars, split3.chars, split4.chars], { autoAlpha: 0, y: -20 });
+            // Show parent containers
+            gsap.set(["#text-1b", "#text-2", "#text-3", "#text-4"], { autoAlpha: 1 });
+            
+            applyGradientText(split1);
+        } catch (err) {
+            console.error("SplitText failed to init:", err);
+        }
+    } else {
+        console.warn("SplitText not found. Falling back to standard animation.");
+    }
 
-  tl1.to('#bg-1-icon', { duration: 0.5, scale: 35, rotation: 0.1, ease: "power1.in" }, 1);
+    // --- TIMELINE START ---
+    
+    tl1.to('#main', { duration: 0.1, autoAlpha: 1 }, 0);
+    tl1.to(['#icon-1', '#icon-2'], { duration: 0.5, y: -250 }, 0)
+       .to('#icon-1', { duration: 0.5, x: 150 }, 0)
+       .to('#icon-2', { duration: 0.5, x: -150 }, 0)
+       .to(['#bg-1', '#icon-1', '#icon-2'], { duration: 0.5, autoAlpha: 0 }, 0.5);
 
-  // Split Animations
-  // immediateRender: false is key here for Safari staggered from tweens
-  tl1.to(split1.chars, { 
-    duration: 0.2, 
-    y: 0, 
-    autoAlpha: 1, 
-    stagger: 0.05, 
-    ease: "power1.out" 
-  }, "+=0.5");
+    tl1.to('#bg-1-icon', { duration: 0.5, scale: 35, rotation: 0.1, ease: "power1.in" }, 1);
 
-  tl1.to(split2.chars, { 
-    duration: 0.2, 
-    y: 0, 
-    autoAlpha: 1, 
-    stagger: 0.05, 
-    ease: "power1.out" 
-  }, ">");
+    // Text 1 & 2
+    let text1Target = (split1 && isSplitLoaded) ? split1.chars : "#text-1b";
+    let text2Target = (split2 && isSplitLoaded) ? split2.chars : "#text-2";
 
-  tl1.to('#logo-1', { duration: 0.5, autoAlpha: 0 }, "+=1.5");
-  tl1.to('#frame-1', { duration: 0.5, scale: 100, rotation: 0.1, ease: "power1.in" });
-  tl1.set('#frame-1', { autoAlpha: 0 });
+    tl1.to(text1Target, { duration: 0.2, y: 0, autoAlpha: 1, stagger: 0.05 }, "+=0.5");
+    tl1.to(text2Target, { duration: 0.2, y: 0, autoAlpha: 1, stagger: 0.05 }, ">");
 
-  tl1.to(split3.chars, { 
-    duration: 0.2, 
-    y: 0, 
-    autoAlpha: 1, 
-    stagger: 0.05 
-  }, "-=0.1");
+    // Frame 1 Transition
+    tl1.to('#logo-1', { duration: 0.5, autoAlpha: 0 }, "+=1.5")
+       .to('#frame-1', { duration: 0.5, scale: 100, rotation: 0.1, ease: "power1.in" })
+       .set('#frame-1', { autoAlpha: 0 });
 
-  tl1.to('#logo-2', { duration: 0.5, autoAlpha: 0 }, "+=2");
-  tl1.to('#frame-2', { duration: 0.5, scale: 100, rotation: 0.1, ease: "power1.in" });
-  tl1.set('#frame-2', { autoAlpha: 0 });
-  
-  tl1.to(split4.chars, { 
-    duration: 0.2, 
-    y: 0, 
-    autoAlpha: 1, 
-    stagger: 0.05 
-  }, ">");
+    // Text 3
+    let text3Target = (split3 && isSplitLoaded) ? split3.chars : "#text-3";
+    tl1.to(text3Target, { duration: 0.2, y: 0, autoAlpha: 1, stagger: 0.05 }, "-=0.1");
+
+    // Frame 2 Transition
+    tl1.to('#logo-2', { duration: 0.5, autoAlpha: 0 }, "+=2")
+       .to('#frame-2', { duration: 0.5, scale: 100, rotation: 0.1, ease: "power1.in" })
+       .set('#frame-2', { autoAlpha: 0 });
+    
+    // Text 4
+    let text4Target = (split4 && isSplitLoaded) ? split4.chars : "#text-4";
+    tl1.to(text4Target, { duration: 0.2, y: 0, autoAlpha: 1, stagger: 0.05 }, ">");
 }
 
 function applyGradientText(splitInstance) {
