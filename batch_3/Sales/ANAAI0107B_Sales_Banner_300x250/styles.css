@@ -285,9 +285,38 @@ html, body {
   -webkit-box-sizing:border-box;
 }
 
-#txt-1, #text-2, #text-1c, #text-1b, #text-3, #text-3a, #text-4{
-  -webkit-backface-visibility: hidden;
+/* Add/Replace these in your styles.css */
+#text-1b, #text-2, #text-3, #text-3a, #text-4, .copy {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+/* Ensure SplitText spans are handled correctly by Safari */
+div[id^="text-"] div, div[id^="text-"] span {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: inline-block; /* Essential for transforms */
+}
+
+.TextGradiat {
+    display: inline-block;
+    position: relative;
+}
+
+/* Hide all split-target text immediately via CSS */
+#text-1b, #text-2, #text-3, #text-4 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Ensure the characters are ready for hardware acceleration */
+div[id^="text-"] div, 
+div[id^="text-"] span {
+    display: inline-block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
