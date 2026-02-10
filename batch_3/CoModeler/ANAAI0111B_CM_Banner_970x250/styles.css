@@ -286,3 +286,9 @@ html, body {
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
 }
+#logo-3{
+    width: 175px;
+    left: 746px;
+    top: 69px;
+    position: absolute;
+}
